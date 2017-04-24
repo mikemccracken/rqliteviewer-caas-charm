@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -xe
+
+juju-log "this is a log from the install hook!"

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+juju-log "in start"
+juju-run-container "" "" "busybox"

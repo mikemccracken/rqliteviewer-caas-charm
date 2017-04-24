@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -eu
+
+juju-log "db-relation-changed"

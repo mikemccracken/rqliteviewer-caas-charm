@@ -1,0 +1,8 @@
+name: rqlite
+summary: "TEST CAAS version of rqlite charm"
+maintainer: juju@ubuntu.com
+description: A test charm for  a container-framework deployment of rqlite
+provides:
+  db:
+    interface: rqlite
+
