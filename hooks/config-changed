@@ -1,5 +1,9 @@
 #!/bin/bash
 
-set -ue
+echo `date` config-changed >> /tmp/charm.log
 
-juju-log "config-changed called"
+list-units --format yaml | while read line; do
+    unit=`echo $line | cut -d : -f1 | cut -d / -f2`
+    echo $unit >> /tmp/charm.log
+    run-container $unit "" "" "rqlite/rqlite"
+done
