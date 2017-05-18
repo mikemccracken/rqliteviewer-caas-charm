@@ -1,7 +1,1 @@
 #!/bin/bash
-
-set -xe
-
-juju-log "this is a log from the install hook!, but it is a new version"
-run-container rqlite "" "" "rqlite/rqlite"
-juju-log "we ran a container."
