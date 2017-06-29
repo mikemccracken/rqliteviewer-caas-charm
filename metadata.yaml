@@ -1,10 +1,10 @@
-name: rqlite
-summary: "TEST CAAS version of rqlite charm"
+name: rqliteviewer
+summary: "TEST CAAS version of rqliteviewer charm"
 maintainer: juju@ubuntu.com
-description: A test charm for  a container-framework deployment of rqlite
+description: A test charm for an rqlite viewer
 series:
   - xenial
-provides:
+requires:
   db:
     interface: rqlite
 

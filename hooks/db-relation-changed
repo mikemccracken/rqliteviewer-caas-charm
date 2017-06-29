@@ -3,3 +3,6 @@
 set -eu
 
 juju-log "db-relation-changed"
+juju-log `relation-get hostname`
+juju-log `env |sort`
+

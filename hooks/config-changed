@@ -2,8 +2,8 @@
 
 echo `date` config-changed >> /tmp/charm.log
 
-list-units --format yaml | while read line; do
-    unit=`echo $line | cut -d : -f1 | cut -d / -f2`
-    echo $unit >> /tmp/charm.log
-    run-container $unit "" "" "rqlite/rqlite"
-done
+# list-units --format yaml | while read line; do
+#     unit=`echo $line | cut -d : -f1 | cut -d / -f2`
+#     echo $unit >> /tmp/charm.log
+#     run-container $unit "" "" "mikemccracken/rqliteviewer"
+# done
