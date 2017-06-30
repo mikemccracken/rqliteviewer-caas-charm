@@ -1,3 +1,3 @@
-TEST charm for CAAS rqlite
+TEST charm for CAAS rqliteviewer toy web app
 
 
