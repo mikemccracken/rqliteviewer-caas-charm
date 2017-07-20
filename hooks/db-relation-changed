@@ -2,7 +2,7 @@
 
 set -eu
 
-juju-log "db-relation-changed"
-juju-log `relation-get hostname`
-juju-log `env |sort`
+host=`relation-get hostname`
+port=`relation-get port`
 
+juju-log "db-relation-changed: hostname=$host port=$port"
