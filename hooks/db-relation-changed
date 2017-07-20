@@ -8,10 +8,13 @@ port=`relation-get port`
 [ -z "$hostname" ] && exit
 [ -z "$port" ] && exit
 
-
+juju-log "db-relation-changed/joined: host: $hostname port: $port"
 
 list-units --format yaml | while read line; do
     unit=`echo $line | cut -d : -f1 | cut -d / -f2`
     kill-container $unit
+    sleep 30
     run-container $unit "app.py $hostname $port" "" "mikemccracken/rqliteviewer"
 done
+
+status-set active "connected to rqlite at $hostname:$port"

@@ -8,3 +8,5 @@ list-units --format yaml | while read line; do
     [ -f /tmp/rqlite-$unit ] || run-container $unit "" "" "mikemccracken/rqliteviewer"
     echo $unit >> /tmp/rqliteviewer-$unit
 done
+
+status-set active "units started"
