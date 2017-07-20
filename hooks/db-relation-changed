@@ -2,7 +2,16 @@
 
 set -eu
 
-host=`relation-get hostname`
+hostname=`relation-get hostname`
 port=`relation-get port`
 
-juju-log "db-relation-changed: hostname=$host port=$port"
+[ -z "$hostname" ] && exit
+[ -z "$port" ] && exit
+
+
+
+list-units --format yaml | while read line; do
+    unit=`echo $line | cut -d : -f1 | cut -d / -f2`
+    kill-container $unit
+    run-container $unit "app.py $hostname $port" "" "mikemccracken/rqliteviewer"
+done
